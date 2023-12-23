@@ -1,1 +1,41 @@
 
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local PhantomForcesWindow = Library:NewWindow("Vans World")
+
+BlueMoon:CreateButton("GhostHup",function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
+end)
+
+
+local BlueMoon = PhantomForcesWindow:NewSection("Main")
+
+BlueMoon:CreateToggle("Inf Snowball", function(value)
+    while true do
+        game:GetService("ReplicatedStorage").VansWinter_NotifyServerSnowballCollected:FireServer()
+        wait(.1)
+        end
+    end)
+    
+BlueMoon:CreateButton("Instant Claim UGC", function()
+    local args = {
+        [1] = 20
+    }
+    
+    game:GetService("ReplicatedStorage").RewardsHandler_ClaimRewardRemoteEvent:InvokeServer(unpack(args))
+    end)
+
+BlueMoon:CreateToggle("Rejoin", function(value)
+local ts = game:GetService("TeleportService")
+local p = game:GetService("Players").LocalPlayer
+    ts:Teleport(game.PlaceId, p)
+end)
+
+BlueMoon:CreateToggle("Inf Snowball", function(value)
+    while true do
+        game:GetService("ReplicatedStorage").VansWinter_NotifyServerSnowballCollected:FireServer()
+        wait(.1)
+        end
+    end)
+
+local BlueMoon = PhantomForcesWindow:NewSection("BY:Moon")
