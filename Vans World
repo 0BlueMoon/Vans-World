@@ -4,17 +4,10 @@ local PhantomForcesWindow = Library:NewWindow("Vans World")
 
 
 local BlueMoon = PhantomForcesWindow:NewSection("Main")
+
 BlueMoon:CreateButton("GhostHup",function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
 end)
-
-
-BlueMoon:CreateToggle("Inf Snowball", function(value)
-    while true do
-        game:GetService("ReplicatedStorage").VansWinter_NotifyServerSnowballCollected:FireServer()
-        wait(.1)
-        end
-    end)
 
 BlueMoon:CreateButton("Instant Claim UGC", function()
     local args = {
@@ -31,7 +24,8 @@ local p = game:GetService("Players").LocalPlayer
 end)
 
 BlueMoon:CreateToggle("Inf Snowball", function(value)
-    while true do
+    _G.Loop = true 
+    while _G.Loop and task.wait() do
         game:GetService("ReplicatedStorage").VansWinter_NotifyServerSnowballCollected:FireServer()
         wait(.1)
         end
