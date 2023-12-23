@@ -1,0 +1,23 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local PhantomForcesWindow = Library:NewWindow("Vans World")
+
+
+local BlueMoon = PhantomForcesWindow:NewSection("Main")
+BlueMoon:CreateButton("Instant Claim UGC", function()
+    local args = {
+        [1] = 20
+    }
+    
+    game:GetService("ReplicatedStorage").RewardsHandler_ClaimRewardRemoteEvent:InvokeServer(unpack(args))
+    end)
+
+BlueMoon:CreateToggle("Rejoin", function(value)
+local ts = game:GetService("TeleportService")
+local p = game:GetService("Players").LocalPlayer
+    ts:Teleport(game.PlaceId, p)
+end)
+
+local BlueMoon = PhantomForcesWindow:NewSection("BY:Moon")
+
+
