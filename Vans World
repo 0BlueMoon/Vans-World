@@ -1,14 +1,13 @@
-
 local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 
 local PhantomForcesWindow = Library:NewWindow("Vans World")
 
+
+local BlueMoon = PhantomForcesWindow:NewSection("Main")
 BlueMoon:CreateButton("GhostHup",function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
 end)
 
-
-local BlueMoon = PhantomForcesWindow:NewSection("Main")
 
 BlueMoon:CreateToggle("Inf Snowball", function(value)
     while true do
@@ -16,7 +15,7 @@ BlueMoon:CreateToggle("Inf Snowball", function(value)
         wait(.1)
         end
     end)
-    
+
 BlueMoon:CreateButton("Instant Claim UGC", function()
     local args = {
         [1] = 20
