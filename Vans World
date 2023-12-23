@@ -22,13 +22,12 @@ local ts = game:GetService("TeleportService")
 local p = game:GetService("Players").LocalPlayer
     ts:Teleport(game.PlaceId, p)
 end)
-
 BlueMoon:CreateToggle("Inf Snowball", function(value)
     _G.Loop = true 
     while _G.Loop and task.wait() do
         game:GetService("ReplicatedStorage").VansWinter_NotifyServerSnowballCollected:FireServer()
-        wait(.1)
         end
     end)
 
 local BlueMoon = PhantomForcesWindow:NewSection("BY:Moon")
+
